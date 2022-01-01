@@ -1,0 +1,39 @@
+spring:
+  profiles:
+    active: core
+---
+server:
+  port: 8080
+spring:
+  config:
+    activate:
+      on-profile:
+  datasource:
+    url: 'jdbc:postgresql://localhost:5432/witch_endless'
+    driver-class-name: 'org.postgresql.Driver'
+    username: witch
+    password: witch
+  flyway:
+    locations: 'classpath:/db/migration'
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    serialization:
+      fail-on-empty-beans: false
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: 'org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy'
+      ddl-auto: validate
+    show-sql: true
+  profiles:
+    include: secret
+  task:
+    execution:
+      pool:
+        core-size: 8
+        max-size: 8
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui
