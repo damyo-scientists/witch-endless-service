@@ -144,4 +144,7 @@ gradle-app.setting
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 
+witchdeliveryservice-434ce-firebase-adminsdk-fcycu-a1ade8d10b.json
+application-secret.yml
+
 # End of https://www.toptal.com/developers/gitignore/api/java,gradle,intellij+all
